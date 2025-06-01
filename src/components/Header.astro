@@ -1,0 +1,30 @@
+---
+const navItems = [
+    { name: "Home", url: "/" },
+    { name: "Projects", url: "/projects" },
+    { name: "About", url: "/about" },
+    { name: "Contact", url: "/contact" }
+];
+---
+
+<header class="py-6 mb-12">
+    <div class="flex justify-between items-center">
+        <a href="/" class="font-semibold text-xl tracking-tight text-slate-900">
+            Aimane<span class="text-slate-500">.dev</span>
+        </a>
+        <nav>
+            <ul class="flex gap-8">
+                {navItems.map(item => (
+                    <li>
+                        <a 
+                            href={item.url} 
+                            class="text-slate-600 hover:text-slate-900 transition-colors text-sm font-medium"
+                        >
+                            {item.name}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    </div>
+</header>
