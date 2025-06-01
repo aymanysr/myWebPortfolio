@@ -1,0 +1,38 @@
+---
+const skills = [
+    {
+        category: "Frontend",
+        technologies: ["HTML", "CSS", "JavaScript","HTMX", "Tailwind CSS", "Astro5"]
+    },
+    {
+        category: "Backend",
+        technologies: ["Ruby", "Ruby on Rails", "Python", "Django", "Flask"]
+    },
+    {
+        category: "Database",
+        technologies: ["MariaDB", "PostgreSQL", "MySQL"]
+    },
+    {
+        category: "Tools",
+        technologies: ["Git", "GitHub", "VS Code", "Docker", "Figma"]
+    }
+];
+---
+
+<section class="py-14 border-b border-slate-300 mb-14">
+    <h2 class="font-semibold text-2xl tracking-tight mb-4">Skills & Technologies</h2>
+    <p class="text-slate-700 text-lg mb-8">Here are some of the technologies I work with:</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {skills.map(skillGroup => (
+            <div class="bg-slate-100 p-6 rounded-xl">
+                <h3 class="font-medium text-xl mb-3 text-slate-800">{skillGroup.category}</h3>
+                <div class="flex flex-wrap gap-2">
+                    {skillGroup.technologies.map(tech => (
+                        <span class="bg-white px-3 py-1 rounded-full text-sm text-slate-700 border border-slate-200">{tech}</span>
+                    ))}
+                </div>
+            </div>
+        ))}
+    </div>
+</section>
