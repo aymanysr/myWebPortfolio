@@ -1,0 +1,186 @@
+---
+import PrimaryLayout from "../layouts/PrimaryLayout.astro";
+import Footer from "../components/Footer.astro";
+
+const contactInfo = {
+  name: "Aïmane Yousr",
+  email: "aimaneyousr@gmail.com",
+  phone: "+212 663 082 545",
+  linkedin: "linkedin.com/in/aimaneyousr",
+  github: "github.com/aymanysr",
+  location: "Casablanca, Morocco"
+};
+
+const education = [
+  {
+    degree: "Computer Science (42Network)",
+    institution: "1337 Coding School / (42Network), Tetouan, Morocco",
+    period: "Oct 2024 – Present",
+    description: "Specialized in C & C++ programming, algorithms, Shell scripting, and systems programming through peer-to-peer learning."
+  },
+  {
+    degree: "Full Stack Software Engineering Training",
+    institution: "ALX-Africa, Casablanca, Morocco",
+    period: "Aug 2023 – June 2024",
+    description: "Completed intensive training in full stack development and software engineering principles."
+  },
+  {
+    degree: "Web Development Bootcamp",
+    institution: "Le Wagon, Casablanca, Morocco",
+    period: "Jan 2023 – Mar 2023",
+    description: "Earned RNCP31174 Developer Certification (Web Applications) through hands-on training in web technologies."
+  },
+];
+
+const skills = [
+  {
+    category: "Programming Languages",
+    items: ["C & C++", "Shell scripting", "Ruby", "Python (beginner)"]
+  },
+  {
+    category: "Web Technologies",
+    items: ["HTML/CSS", "JavaScript", "API design and integration"]
+  },
+  {
+    category: "Frameworks & Tools",
+    items: ["Ruby on Rails", "Flask", "Git", "DevOps tools"]
+  },
+  {
+    category: "Development Practices",
+    items: ["Systems programming", "Software architecture", "Peer-to-peer learning", "Algorithms & problem solving"]
+  },
+  {
+    category: "Languages",
+    items: ["Arabic (Native)", "English (C1)", "French (C1)", "German (B1)"]
+  }
+];
+
+const projects = [
+  {
+    title: "Mini Shell (C Programming)",
+    description: `
+        Designed a a custom UNIX command-line interpreter, as part of the 42 Network curriculum.
+        Implemented core shell functionalities, including process execution, error handling, input/output redirection, pipes, and signal handling.
+        Addressed usability concerns and ensured robust performance.
+    `
+  },
+  {
+    title: "So_long (C programming)",
+    description: `
+        42 Network 2D game project using MiniLibX graphics library. 
+        Features map parsing, sprite animation, and collectible items with a custom MLX-based rendering engine.    `
+  },
+  {
+    title: "HBNB (Web Application)",
+    description: `
+        The AirBnB clone project aims to build a simplified version of the AirBnB platform,
+        starting with a command interpreter for managing AirBnB objects.
+        The interpreter allows users to create, retrieve, update, and destroy objects,
+        and can be started by cloning the repository and running the console.py script.    `
+  },
+  {
+    title: "Hobby Hub (CRUD Web Application)",
+    description: `
+      Developed an interactive platform for hobby enthusiasts using Ruby on Rails and JavaScript.
+      Built a clean, responsive front-end and a robust CRUD backend, plus API integration for seamless UX.
+    `
+  }
+];
+
+const interests = [
+  "Creative coding",
+  "Street photography",
+  "Music (Guitarist)",
+  "Surfing",
+  "Visual Arts"
+];
+---
+
+<PrimaryLayout title="About Me | Aïmane Yousr">
+  <section class="mb-16">
+    <h1 class="font-semibold text-4xl mb-4 text-slate-950">About Me</h1>
+    <p class="text-slate-700 text-lg md:text-xl leading-normal">
+      I’m a passionate full-stack web developer with a strong software engineering background.
+      I’m currently learning a lot at 1337 School (42Network)’s super intense program.
+      I’ve learned C programming, shell scripting, advanced algorithms, systems programming, and software architecture.
+      I’m really good at building efficient and user-friendly web applications.
+      I’m excited to use my skills and creativity to build really cool web solutions.
+    </p>
+  </section>
+
+  <section class="mb-16">
+    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900">Education</h2>
+    <div class="space-y-8">
+      {education.map(edu => (
+        <div class="border-l-2 border-slate-300 pl-6 relative">
+          <div class="absolute w-3 h-3 bg-slate-500 rounded-full -left-[7px] top-1"></div>
+          <h3 class="font-medium text-xl text-slate-800">{edu.degree}</h3>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-slate-600">{edu.institution}</span>
+            <span class="text-sm text-slate-500">{edu.period}</span>
+          </div>
+          {edu.description && <p class="text-slate-700">{edu.description}</p>}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mb-16">
+    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900">Skills</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {skills.map(skill => (
+        <div>
+          <h3 class="font-medium text-lg mb-2 text-slate-800">{skill.category}</h3>
+          <ul class="list-disc pl-5 text-slate-700 space-y-1">
+            {skill.items.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mb-16">
+    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900">Projects</h2>
+    <div class="space-y-8">
+      {projects.map(proj => (
+        <div class="border-l-2 border-slate-300 pl-6 relative">
+          <div class="absolute w-3 h-3 bg-slate-500 rounded-full -left-[7px] top-1"></div>
+          <h3 class="font-medium text-xl text-slate-800">{proj.title}</h3>
+          <p class="text-slate-700 mt-2">{proj.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mb-16">
+    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900">Interests</h2>
+    <div class="flex flex-wrap gap-3 text-slate-700">
+      {interests.map(interest => (
+        <span class="px-3 py-1 bg-slate-100 rounded-full">{interest}</span>
+      ))}
+    </div>
+  </section>
+
+  <section class="mb-16">
+    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900">Contact</h2>
+    <div class="space-y-2 text-slate-700">
+      <p><span class="font-medium">Email:</span> {contactInfo.email}</p>
+      <p><span class="font-medium">Phone:</span> {contactInfo.phone}</p>
+      <p>
+        <span class="font-medium">LinkedIn:</span>
+        <a href={`https://${contactInfo.linkedin}`} class="text-blue-600 hover:underline">
+          {contactInfo.linkedin}
+        </a>
+      </p>
+      <p>
+        <span class="font-medium">GitHub:</span>
+        <a href={`https://${contactInfo.github}`} class="text-blue-600 hover:underline">
+          {contactInfo.github}
+        </a>
+      </p>
+      <p><span class="font-medium">Location:</span> {contactInfo.location}</p>
+    </div>
+  </section>
+
+  <Footer />
+</PrimaryLayout>
