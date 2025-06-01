@@ -1,0 +1,89 @@
+---
+import PrimaryLayout from "../layouts/PrimaryLayout.astro";
+import Footer from "../components/Footer.astro";
+
+const projects = [
+  {
+    title: "Project Minishell",
+    description: "42 Network project implementing a minimalist UNIX shell with command execution, pipelines, and environment variables. Developed in C with strict memory management and error handling.",
+    image: "../images/minishell.jpg",
+    technologies: ["C", "Make", "42 Norm", "Linux System Calls"],
+    // link: "/projects/minishell",
+    github: "https://github.com/Yoneva/Minishell"
+  },
+  {
+    title: "So_Long",
+    description: "42 Network 2D game project using MiniLibX graphics library. Features map parsing, sprite animation, and collectible items with a custom MLX-based rendering engine.",
+    image: "../images/so_long.jpg",
+    technologies: ["C", "MiniLibX", "Make", "42 Norm"],
+    // link: "/projects/so_long",
+    github: "https://github.com/aymanysr/1337_projects/tree/main/so_long"
+  },
+  {
+      title: "Photographer Portfolio",
+      description: "A comprehensive portfolio website for photographers with a content management system. Built with React and Sanity.io, this project allows photographers to showcase their work and manage their content easily.",
+      image: "../images/image.png",
+      technologies: ["HTML", "CSS", "Vanilla Javascript", "Astro 5", "Lightbox", "Stimulus"],
+      // link: "/projects/photographer-portfolio",
+      github: "https://github.com/aymanysr/photographer-portfolio"
+  },
+  {
+        title: "HBNB",
+        description: "An Airbnb clone developed as part of the ALX Software Engineering program. This full-stack application includes features like property listings, user authentication, booking management, and reviews.",
+        image: "../images/hbnb.png",
+        technologies: ["Python", "Flask", "MySQL", "JavaScript", "HTML/CSS"],
+        // link: "/projects/hbnb",
+        github: "https://github.com/aymanysr/AirBnB_clone"
+    },
+];
+---
+
+<PrimaryLayout title="Projects | Aimane Yousr">
+  <section class="mb-16">
+    <h1 class="font-semibold text-4xl mb-4 text-slate-950">Projects</h1>
+    <p class="text-slate-700 text-lg md:text-xl leading-normal">A collection of my work and personal projects.</p>
+  </section>
+
+  <div class="grid grid-cols-1 gap-12 mb-20">
+    {projects.map((project, index) => (
+      <div class={`flex flex-col md:flex-row gap-8 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+        <div class="md:w-1/2">
+          <img 
+            src={project.image} 
+            alt={project.title} 
+            class="rounded-xl w-full h-auto object-cover shadow-md"
+          />
+        </div>
+        <div class="md:w-1/2 flex flex-col justify-center">
+          <h2 class="font-semibold text-2xl tracking-tight mb-2 text-slate-900">{project.title}</h2>
+          <p class="text-slate-700 mb-4">{project.description}</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            {project.technologies.map(tech => (
+              <span class="bg-slate-100 px-3 py-1 rounded-full text-sm text-slate-700">{tech}</span>
+            ))}
+          </div>
+          <div class="flex gap-4">
+            <a 
+              href={project.github} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="flex items-center gap-2 text-slate-700 hover:text-slate-900 text-sm font-medium"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              View Code
+            </a>
+            {/* <a
+              href={project.link} 
+              class="flex items-center gap-2 text-slate-700 hover:text-slate-900 text-sm font-medium"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width=" 16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              View Project
+            </a> */}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <Footer />
+</PrimaryLayout>
