@@ -126,20 +126,6 @@ const interests = [
   </section>
 
   <section class="mb-16">
-    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900">Skills</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {skills.map(skill => (
-        <div>
-          <h3 class="font-medium text-lg mb-2 text-slate-800">{skill.category}</h3>
-          <ul class="list-disc pl-5 text-slate-700 space-y-1">
-            {skill.items.map(item => <li>{item}</li>)}
-          </ul>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <section class="mb-16">
     <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900">Projects</h2>
     <div class="space-y-8">
       {projects.map(proj => (

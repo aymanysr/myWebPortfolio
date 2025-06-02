@@ -1,5 +1,5 @@
 ---
-const skills = [
+const technology = [
     {
         category: "Frontend",
         technologies: ["HTML", "CSS", "JavaScript","HTMX", "Tailwind CSS", "Astro5"]
@@ -17,18 +17,40 @@ const skills = [
         technologies: ["Git", "GitHub", "VS Code", "Docker", "Figma"]
     }
 ];
+const skills = [
+  {
+    category: "Programming Languages",
+    items: ["C & C++", "Shell scripting", "Ruby", "Python (beginner)"]
+  },
+  {
+    category: "Web Technologies",
+    items: ["HTML/CSS", "JavaScript", "API design and integration"]
+  },
+  {
+    category: "Frameworks & Tools",
+    items: ["Ruby on Rails", "Flask", "Git", "DevOps tools"]
+  },
+  {
+    category: "Development Practices",
+    items: ["Systems programming", "Software architecture", "Peer-to-peer learning", "Algorithms & problem solving"]
+  },
+  {
+    category: "Languages",
+    items: ["Arabic (Native)", "English (C1)", "French (C1)", "German (B1)"]
+  }
+];
 ---
 
 <section class="py-14 border-b border-slate-300 mb-14">
-    <h2 class="font-semibold text-2xl tracking-tight mb-4">Skills & Technologies</h2>
+    <h2 class="font-semibold text-2xl tracking-tight mb-4">Technologies</h2>
     <p class="text-slate-700 text-lg mb-8">Here are some of the technologies I work with:</p>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {skills.map(skillGroup => (
+        {technology.map(technologyGroup => (
             <div class="bg-slate-100 p-6 rounded-xl">
-                <h3 class="font-medium text-xl mb-3 text-slate-800">{skillGroup.category}</h3>
+                <h3 class="font-medium text-xl mb-3 text-slate-800">{technologyGroup.category}</h3>
                 <div class="flex flex-wrap gap-2">
-                    {skillGroup.technologies.map(tech => (
+                    {technologyGroup.technologies.map(tech => (
                         <span class="bg-white px-3 py-1 rounded-full text-sm text-slate-700 border border-slate-200">{tech}</span>
                     ))}
                 </div>
@@ -36,3 +58,16 @@ const skills = [
         ))}
     </div>
 </section>
+<section class="mb-16">
+    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900">Skills</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {skills.map(skill => (
+        <div>
+          <h3 class="font-medium text-lg mb-2 text-slate-800">{skill.category}</h3>
+          <ul class="list-disc pl-5 text-slate-700 space-y-1">
+            {skill.items.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
