@@ -1,22 +1,25 @@
 ---
-const technology = [
-    {
-        category: "Frontend",
-        technologies: ["HTML", "CSS", "JavaScript","HTMX", "Tailwind CSS", "Astro5"]
-    },
-    {
-        category: "Backend",
-        technologies: ["Ruby", "Ruby on Rails", "Python", "Django", "Flask"]
-    },
-    {
-        category: "Database",
-        technologies: ["MariaDB", "PostgreSQL", "MySQL"]
-    },
-    {
-        category: "Tools",
-        technologies: ["Git", "GitHub", "VS Code", "Docker", "Figma"]
-    }
+const education = [
+  {
+    degree: "Computer Science (42Network)",
+    institution: "1337 Coding School / (42Network), Tetouan, Morocco",
+    period: "Oct 2024 – Present",
+    description: "Specialized in C & C++ programming, algorithms, Shell scripting, and systems programming through peer-to-peer learning."
+  },
+  {
+    degree: "Full Stack Software Engineering Training",
+    institution: "ALX-Africa, Casablanca, Morocco",
+    period: "Aug 2023 – June 2024",
+    description: "Completed intensive training in full stack development and software engineering principles."
+  },
+  {
+    degree: "Web Development Bootcamp",
+    institution: "Le Wagon, Casablanca, Morocco",
+    period: "Jan 2023 – Mar 2023",
+    description: "Earned RNCP31174 Developer Certification (Web Applications) through hands-on training in web technologies."
+  },
 ];
+
 const skills = [
   {
     category: "Programming Languages",
@@ -39,9 +42,134 @@ const skills = [
     items: ["Arabic (Native)", "English (C1)", "French (C1)", "German (B1)"]
   }
 ];
+const technology = [
+    {
+        category: "Frontend",
+        technologies: ["HTML", "CSS", "JavaScript","HTMX", "Tailwind CSS", "Astro5"]
+    },
+    {
+        category: "Backend",
+        technologies: ["Ruby", "Ruby on Rails", "Python", "Django", "Flask"]
+    },
+    {
+        category: "Database",
+        technologies: ["MariaDB", "PostgreSQL", "MySQL"]
+    },
+    {
+        category: "Tools",
+        technologies: ["Git", "GitHub", "VS Code", "Docker", "Figma"]
+    }
+];
+const projects = [
+  {
+    title: "Mini Shell (C Programming)",
+    description: `
+        Designed a a custom UNIX command-line interpreter, as part of the 42 Network curriculum.
+        Implemented core shell functionalities, including process execution, error handling, input/output redirection, pipes, and signal handling.
+        Addressed usability concerns and ensured robust performance.
+    `
+  },
+  {
+    title: "So_long (C programming)",
+    description: `
+        42 Network 2D game project using MiniLibX graphics library. 
+        Features map parsing, sprite animation, and collectible items with a custom MLX-based rendering engine.    `
+  },
+  {
+    title: "HBNB (Web Application)",
+    description: `
+        The AirBnB clone project aims to build a simplified version of the AirBnB platform,
+        starting with a command interpreter for managing AirBnB objects.
+        The interpreter allows users to create, retrieve, update, and destroy objects,
+        and can be started by cloning the repository and running the console.py script.    `
+  },
+  {
+    title: "Hobby Hub (CRUD Web Application)",
+    description: `
+      Developed an interactive platform for hobby enthusiasts using Ruby on Rails and JavaScript.
+      Built a clean, responsive front-end and a robust CRUD backend, plus API integration for seamless UX.
+    `
+  }
+];
+
+const interests = [
+  "Creative coding",
+  "Street photography",
+  "Music (Guitarist)",
+  "Surfing",
+  "Visual Arts"
+];
 ---
 
-<section class="py-14 border-b border-slate-300 mb-14">
+<style>
+  html { scroll-behavior: smooth; }
+</style>
+
+<section id="about" class="mb-16">
+  <h1 class="font-semibold text-4xl mb-4 text-slate-950">About Me</h1>
+  <p class="text-slate-700 text-lg md:text-xl leading-normal">
+    I’m a passionate full-stack web developer with a strong software engineering background.
+    I’m currently learning a lot at 1337 School (42Network)’s super intense program.
+    I’ve learned C programming, shell scripting, advanced algorithms, systems programming, and software architecture.
+    I’m really good at building efficient and user-friendly web applications.
+    I’m excited to use my skills and creativity to build really cool web solutions.
+  </p>
+</section>
+
+{/* Toggle Button */}
+<div class="flex justify-center my-8">
+  <button id="toggleCvBtn" class="px-6 py-3 bg-slate-950 text-white rounded-lg hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-opacity-50 transition ease-in-out duration-150">
+    Show Full CV
+  </button>
+</div>
+
+{/* Rest of the CV - Initially Hidden */}
+<div id="cvRest" style="display: none;">
+  <section class="mb-16">
+    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900">Education</h2>
+    <div class="space-y-8">
+      {education.map(edu => (
+        <div class="border-l-2 border-slate-300 pl-6 relative">
+          <div class="absolute w-3 h-3 bg-slate-500 rounded-full -left-[7px] top-1"></div>
+          <h3 class="font-medium text-xl text-slate-800">{edu.degree}</h3>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-slate-600">{edu.institution}</span>
+            <span class="text-sm text-slate-500">{edu.period}</span>
+          </div>
+          {edu.description && <p class="text-slate-700">{edu.description}</p>}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mb-16">
+    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900">Projects</h2>
+    <div class="space-y-8">
+      {projects.map(proj => (
+        <div class="border-l-2 border-slate-300 pl-6 relative">
+          <div class="absolute w-3 h-3 bg-slate-500 rounded-full -left-[7px] top-1"></div>
+          <h3 class="font-medium text-xl text-slate-800">{proj.title}</h3>
+          <p class="text-slate-700 mt-2">{proj.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mb-16">
+    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900">Skills</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {skills.map(skill => (
+        <div>
+          <h3 class="font-medium text-lg mb-2 text-slate-800">{skill.category}</h3>
+          <ul class="list-disc pl-5 text-slate-700 space-y-1">
+            {skill.items.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-14 border-b border-slate-300 mb-14">
     <h2 class="font-semibold text-2xl tracking-tight mb-4">Technologies</h2>
     <p class="text-slate-700 text-lg mb-8">Here are some of the technologies I work with:</p>
     
@@ -57,17 +185,50 @@ const skills = [
             </div>
         ))}
     </div>
-</section>
-<section class="mb-16">
-    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900">Skills</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {skills.map(skill => (
-        <div>
-          <h3 class="font-medium text-lg mb-2 text-slate-800">{skill.category}</h3>
-          <ul class="list-disc pl-5 text-slate-700 space-y-1">
-            {skill.items.map(item => <li>{item}</li>)}
-          </ul>
-        </div>
+  </section>
+  
+  <section class="mb-16">
+    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900">Interests</h2>
+    <div class="flex flex-wrap gap-3 text-slate-700">
+      {interests.map(interest => (
+        <span class="px-3 py-1 bg-slate-100 rounded-full">{interest}</span>
       ))}
     </div>
   </section>
+</div>
+
+{/* Client-side script to handle the toggle functionality */}
+<script is:inline>
+  // Wait for the DOM to be fully loaded before trying to access elements
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('toggleCvBtn');
+    const cvRestContent = document.getElementById('cvRest');
+    const aboutMeSection = document.querySelector('section'); // A general selector for the first section
+
+    // Check if the button and content elements exist to prevent errors
+    if (toggleButton && cvRestContent) {
+      toggleButton.addEventListener('click', () => {
+        // Check the current display style to toggle visibility
+        const isHidden = cvRestContent.style.display === 'none' || cvRestContent.style.display === '';
+        
+        if (isHidden) {
+          cvRestContent.style.display = 'block'; // Show the content
+          toggleButton.textContent = 'Hide Full CV'; // Update button text
+          // Optional: Scroll to the beginning of the revealed content for better UX
+          // cvRestContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          cvRestContent.style.display = 'none'; // Hide the content
+          toggleButton.textContent = 'Show Full CV'; // Update button text
+          // Optional: Scroll back to the "About Me" section or the button when hiding
+          // if (aboutMeSection) {
+          //    aboutMeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // }
+        }
+      });
+    } else {
+      // Log an error if essential elements are not found, helps in debugging
+      console.error("Toggle button or CV content element not found. Please check the IDs: #toggleCvBtn, #cvRest");
+    }
+  });
+</script>
+
