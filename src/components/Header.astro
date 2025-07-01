@@ -9,8 +9,8 @@ const navItems = [
 
 <header class="py-6 mb-12">
     <div class="flex justify-between items-center">
-        <a href="/myWebPortfolio/" class="font-semibold text-xl tracking-tight text-slate-900">
-            Aimane<span class="text-slate-500">.dev</span>
+        <a href="/myWebPortfolio/" class="font-semibold text-xl tracking-tight text-slate-900 dark:text-white">
+            Aimane<span class="text-slate-500 dark:text-slate-400">.dev</span>
         </a>
         <nav>
             <ul class="flex gap-8">
@@ -18,7 +18,7 @@ const navItems = [
                     <li>
                         <a 
                             href={item.url} 
-                            class="text-slate-600 hover:text-slate-900 transition-colors text-sm font-medium"
+                            class="text-slate-600 hover:text-slate-900 transition-colors text-sm font-medium dark:text-slate-400 dark:hover:text-white"
                         >
                             {item.name}
                         </a>
@@ -26,5 +26,43 @@ const navItems = [
                 ))}
             </ul>
         </nav>
+        <button id="theme-toggle" class="ml-4 p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 dark:focus:ring-offset-slate-900">
+            <!-- Sun icon (visible in dark mode) -->
+            <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-600 dark:text-slate-400 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M4 12H3m15.325 5.325l-.707.707M6.364 6.364l-.707-.707m12.728 0l-.707.707M6.364 17.636l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <!-- Moon icon (visible in light mode) -->
+            <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-600 dark:text-slate-400 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+        </button>
     </div>
 </header>
+
+<script client:load>
+    console.log('Header script loaded.');
+    const themeToggle = document.getElementById('theme-toggle');
+    console.log('themeToggle element:', themeToggle);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            console.log('Theme toggle clicked!');
+            console.log('Current html classes:', document.documentElement.className);
+            console.log('Contains dark class:', document.documentElement.classList.contains('dark'));
+            
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                console.log('Switched to light mode.');
+                console.log('New html classes:', document.documentElement.className);
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                console.log('Switched to dark mode.');
+                console.log('New html classes:', document.documentElement.className);
+            }
+        });
+    } else {
+        console.error('Theme toggle button not found!');
+    }
+</script>

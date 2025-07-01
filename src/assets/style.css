@@ -1,11 +1,18 @@
 @import "tailwindcss";
+@theme {
+  --default-transition-duration: 150ms;
+  --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@variant dark (&:is(.dark *));
 
 * {
   -webkit-font-smoothing: antialiased;
 }
+
+/* Smooth transitions for theme switching - removed overly broad selector */
 
 /* This is needed as there is a bug in Safari which is causing our font weights to render weirdly. */
 @layer utilities {
@@ -57,3 +64,5 @@
     font-variation-settings: 'wght' 900;
   }
 }
+
+

@@ -106,8 +106,8 @@ const interests = [
 </style>
 
 <section id="about" class="mb-16">
-  <h1 class="font-semibold text-4xl mb-4 text-slate-950">About Me</h1>
-  <p class="text-slate-700 text-lg md:text-xl leading-normal">
+  <h1 class="font-semibold text-4xl mb-4 text-slate-950 dark:text-white">About Me</h1>
+  <p class="text-slate-600 text-lg md:text-xl leading-normal dark:text-slate-300">
     I’m a passionate full-stack web developer with a strong software engineering background.
     I’m currently learning a lot at 1337 School (42Network)’s super intense program.
     I’ve learned C programming, shell scripting, advanced algorithms, systems programming, and software architecture.
@@ -118,7 +118,7 @@ const interests = [
 
 {/* Toggle Button */}
 <div class="flex justify-center my-8">
-  <button id="toggleCvBtn" class="px-6 py-3 bg-slate-950 text-white rounded-lg hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-opacity-50 transition ease-in-out duration-150">
+  <button id="toggleCvBtn" class="px-6 py-3 bg-slate-950 text-white rounded-lg hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-opacity-50 transition ease-in-out duration-150 dark:bg-slate-700 dark:hover:bg-slate-600 dark:focus:ring-slate-400">
     Show Full CV
   </button>
 </div>
@@ -126,42 +126,42 @@ const interests = [
 {/* Rest of the CV - Initially Hidden */}
 <div id="cvRest" style="display: none;">
   <section class="mb-16">
-    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900">Education</h2>
+    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900 dark:text-white">Education</h2>
     <div class="space-y-8">
       {education.map(edu => (
-        <div class="border-l-2 border-slate-300 pl-6 relative">
-          <div class="absolute w-3 h-3 bg-slate-500 rounded-full -left-[7px] top-1"></div>
-          <h3 class="font-medium text-xl text-slate-800">{edu.degree}</h3>
+        <div class="border-l-2 border-slate-300 dark:border-slate-700 pl-6 relative">
+          <div class="absolute w-3 h-3 bg-slate-500 dark:bg-slate-400 rounded-full -left-[7px] top-1"></div>
+          <h3 class="font-medium text-xl text-slate-800 dark:text-white">{edu.degree}</h3>
           <div class="flex justify-between items-center mb-2">
-            <span class="text-slate-600">{edu.institution}</span>
-            <span class="text-sm text-slate-500">{edu.period}</span>
+            <span class="text-slate-600 dark:text-slate-400">{edu.institution}</span>
+            <span class="text-sm text-slate-600 dark:text-slate-400">{edu.period}</span>
           </div>
-          {edu.description && <p class="text-slate-700">{edu.description}</p>}
+          {edu.description && <p class="text-slate-600 dark:text-slate-300">{edu.description}</p>}
         </div>
       ))}
     </div>
   </section>
 
   <section class="mb-16">
-    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900">Projects</h2>
+    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900 dark:text-white">Projects</h2>
     <div class="space-y-8">
       {projects.map(proj => (
-        <div class="border-l-2 border-slate-300 pl-6 relative">
-          <div class="absolute w-3 h-3 bg-slate-500 rounded-full -left-[7px] top-1"></div>
-          <h3 class="font-medium text-xl text-slate-800">{proj.title}</h3>
-          <p class="text-slate-700 mt-2">{proj.description}</p>
+        <div class="border-l-2 border-slate-300 dark:border-slate-700 pl-6 relative">
+          <div class="absolute w-3 h-3 bg-slate-500 dark:bg-slate-400 rounded-full -left-[7px] top-1"></div>
+          <h3 class="font-medium text-xl text-slate-800 dark:text-white">{proj.title}</h3>
+          <p class="text-slate-700 mt-2 dark:text-slate-300">{proj.description}</p>
         </div>
       ))}
     </div>
   </section>
 
   <section class="mb-16">
-    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900">Skills</h2>
+    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900 dark:text-white">Skills</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {skills.map(skill => (
         <div>
-          <h3 class="font-medium text-lg mb-2 text-slate-800">{skill.category}</h3>
-          <ul class="list-disc pl-5 text-slate-700 space-y-1">
+          <h3 class="font-medium text-lg mb-2 text-slate-800 dark:text-white">{skill.category}</h3>
+          <ul class="list-disc pl-5 text-slate-600 dark:text-slate-300 space-y-1">
             {skill.items.map(item => <li>{item}</li>)}
           </ul>
         </div>
@@ -169,17 +169,17 @@ const interests = [
     </div>
   </section>
 
-  <section class="py-14 border-b border-slate-300 mb-14">
-    <h2 class="font-semibold text-2xl tracking-tight mb-4">Technologies</h2>
-    <p class="text-slate-700 text-lg mb-8">Here are some of the technologies I work with:</p>
+  <section class="py-14 border-b border-slate-300 dark:border-slate-700 mb-14">
+    <h2 class="font-semibold text-2xl tracking-tight mb-4 dark:text-white">Technologies</h2>
+    <p class="text-slate-600 text-lg mb-8 dark:text-slate-300">Here are some of the technologies I work with:</p>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {technology.map(technologyGroup => (
-            <div class="bg-slate-100 p-6 rounded-xl">
-                <h3 class="font-medium text-xl mb-3 text-slate-800">{technologyGroup.category}</h3>
+            <div class="bg-slate-100 p-6 rounded-xl dark:bg-slate-800">
+                <h3 class="font-medium text-xl mb-3 text-slate-800 dark:text-white">{technologyGroup.category}</h3>
                 <div class="flex flex-wrap gap-2">
                     {technologyGroup.technologies.map(tech => (
-                        <span class="bg-white px-3 py-1 rounded-full text-sm text-slate-700 border border-slate-200">{tech}</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm text-slate-700 border border-slate-200 dark:bg-slate-700 dark:text-white dark:border-slate-600">{tech}</span>
                     ))}
                 </div>
             </div>
@@ -188,10 +188,10 @@ const interests = [
   </section>
   
   <section class="mb-16">
-    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900">Interests</h2>
-    <div class="flex flex-wrap gap-3 text-slate-700">
+    <h2 class="font-semibold text-2xl tracking-tight mb-6 text-slate-900 dark:text-white">Interests</h2>
+    <div class="flex flex-wrap gap-3 text-slate-600 dark:text-slate-300">
       {interests.map(interest => (
-        <span class="px-3 py-1 bg-slate-100 rounded-full">{interest}</span>
+        <span class="px-3 py-1 bg-slate-100 rounded-full dark:bg-slate-800 dark:text-white">{interest}</span>
       ))}
     </div>
   </section>

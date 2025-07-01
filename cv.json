@@ -1,0 +1,94 @@
+{
+  "personal_info": {
+    "name": "Aïmane Yousr",
+    "email": "aimaneyousr@gmail.com",
+    "phone": "+212 663 082 545",
+    "linkedin": "https://linkedin.com/in/aimaneyousr",
+    "github": "https://github.com/aymanysr",
+    "location": "Casablanca, Morocco"
+  },
+  "summary": "Motivated Full-Stack Web Developer with a strong software engineering background and keen interest in web development. Trained through programs, I’m now at 1337 School, part of the prestigious 42Network system. This program focuses on deepening knowledge in C, Shell scripting, advanced algorithms, systems programming, software architecture, and Web Development. Eager to apply my expertise and innovative approach to create impactful web development solutions.",
+  "key_skills": [
+    {
+      "category": "Programming Languages",
+      "skills": ["C", "C++", "Shell scripting", "Ruby", "Python"]
+    },
+    {
+      "category": "Web Technologies",
+      "skills": ["HTML/CSS", "JavaScript", "API design and integration"]
+    },
+    {
+      "category": "Frameworks & Tools",
+      "skills": ["Ruby on Rails", "Flask", "Git", "DevOps tools"]
+    },
+    {
+      "category": "Development Practices",
+      "skills": ["Systems programming", "Software architecture", "Peer-to-peer learning"]
+    },
+    {
+      "category": "Algorithms & Problem Solving",
+      "skills": ["Advanced algorithms", "Collaborative problem-solving"]
+    },
+    {
+      "category": "Languages",
+      "skills": ["Arabic (Native)", "English (C1)", "French (C1)", "German (B1)"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Minishell (C Programming)",
+      "description_points": [
+        "Designed a a custom UNIX command-line interpreter, as part of the 42 Network curriculum.",
+        "Implemented core shell functionalities, including process execution, error handling, input/output redirection, pipes, and signal handling.",
+        "Addressed usability concerns and ensured robust performance."
+      ],
+      "github_link": "https://github.com/Yoneva/Minishell"
+    },
+    {
+      "title": "Hobby Hub (CRUD Web Application)",
+      "description_points": [
+        "Developed an interactive platform for hobby enthusiasts using Ruby on Rails and JavaScript.",
+        "Built a clean, responsive front-end and a robust backend for CRUD operations.",
+        "Designed and integrated APIs for seamless user interactions."
+      ],
+      "github_link": "https://github.com/aymanysr/Hobby_Hub"
+    }
+  ],
+  "education": [
+    {
+      "degree_title": "Computer Science (42Network)",
+      "institution": "1337 School (42Network)",
+      "location": "Tetouan, Morocco",
+      "dates": "Oct 2024 - On going",
+      "details": "Specialized in C & C++ programming, algorithms, Shell scripting, and systems programming."
+    },
+    {
+      "degree_title": "Full Stack Software Engineering",
+      "institution": "ALX-Africa",
+      "location": "Casablanca, Morocco",
+      "dates": "Aug 2023 – June 2024",
+      "details": null
+    },
+    {
+      "degree_title": "Web Development Bootcamp",
+      "institution": "Le Wagon",
+      "location": "Casablanca, Morocco",
+      "dates": "Jan 2023 – Mar 2023",
+      "details": "Earned RNCP31174 Developer Certification (Web Applications)."
+    },
+    {
+      "degree_title": "Baccalaureate in Physical Science",
+      "institution": "EL FARABI High School",
+      "location": "Casablanca, Morocco",
+      "dates": "2015",
+      "details": null
+    }
+  ],
+  "interests": [
+    "Creative coding",
+    "Street photography",
+    "Music (Guitarist)",
+    "Surfing",
+    "Visual Arts"
+  ]
+}
