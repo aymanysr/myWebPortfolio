@@ -36,6 +36,24 @@
   ],
   "projects": [
     {
+      "title": "Inception | Docker, Docker Compose, Alpine Linux",
+      "description_points": [
+        "Designed Docker-Compose infrastructure with isolated Nginx, MariaDB, and WordPress services."
+      ]
+    },
+    {
+      "title": "ft_irc | C++98, Sockets",
+      "description_points": [
+        "Implemented an IRC server with non-blocking I/O, channel management, and RFC-compliant features."
+      ]
+    },
+    {
+      "title": "CPP Modules 00-09 | C++",
+      "description_points": [
+        "Completed OOP, polymorphism, and STL projects across ten modules."
+      ]
+    },
+    {
       "title": "Minishell (C Programming)",
       "description_points": [
         "Designed a a custom UNIX command-line interpreter, as part of the 42 Network curriculum.",
@@ -43,6 +61,36 @@
         "Addressed usability concerns and ensured robust performance."
       ],
       "github_link": "https://github.com/Yoneva/Minishell"
+    },
+    {
+      "title": "cub3D | C, MiniLibX",
+      "description_points": [
+        "Created a Wolfenstein-style 3D engine using raycasting and texture mapping."
+      ]
+    },
+    {
+      "title": "NetPractice | Network Configuration",
+      "description_points": [
+        "Solved TCP/IP addressing, subnetting, and routing challenges."
+      ]
+    },
+    {
+      "title": "so long | C, MiniLibX",
+      "description_points": [
+        "Created a 2D maze game featuring map parsing, sprite animation, and custom rendering."
+      ]
+    },
+    {
+      "title": "Philosophers | C, Pthreads",
+      "description_points": [
+        "Solved the Dining Philosophers problem using mutexes to avoid deadlocks."
+      ]
+    },
+    {
+      "title": "HBNB (AirBnB clone) | Python, Flask",
+      "description_points": [
+        "Built a console-based AirBnB clone with full CRUD operations via a Python interpreter."
+      ]
     },
     {
       "title": "Hobby Hub (CRUD Web Application)",
