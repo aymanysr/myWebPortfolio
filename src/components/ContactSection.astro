@@ -1,40 +1,62 @@
 ---
+import cvData from "../../cv.json";
+
 const contactInfo = {
-  name: "Aïmane Yousr",
-  email: "aimaneyousr@gmail.com",
-  phone: "+212 663 082 545",
-  linkedin: "linkedin.com/in/aimaneyousr",
-  github: "github.com/aymanysr",
-  location: "Casablanca, Morocco"
+  name: cvData.personal_info.name,
+  email: cvData.personal_info.email,
+  phone: cvData.personal_info.phone,
+  linkedin: cvData.personal_info.linkedin.replace("https://", ""),
+  github: cvData.personal_info.github.replace("https://", ""),
+  location: cvData.personal_info.location,
 };
 ---
 
 <section class="py-14">
-    <h2 class="font-semibold text-2xl tracking-tight mb-4 dark:text-white">Get in Touch</h2>
-    <p class="text-slate-600 text-lg mb-8 dark:text-slate-300">Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
-    
-    <div class="bg-slate-100 p-8 rounded-xl dark:bg-slate-800">
-        <div class="grid grid-cols-1 gap-8">
-            <div>
-                <h3 class="font-medium text-xl mb-4 text-slate-800 dark:text-white">Contact Information</h3>
-                <div class="space-y-2 text-slate-600 dark:text-slate-300">
-                    <p><span class="font-medium">Email:</span> {contactInfo.email}</p>
-                    <p><span class="font-medium">Phone:</span> {contactInfo.phone}</p>
-                    <p>
-                      <span class="font-medium">LinkedIn:</span>
-                      <a href={`https://${contactInfo.linkedin}`} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline dark:text-blue-400">
-                        {contactInfo.linkedin}
-                      </a>
-                    </p>
-                    <p>
-                      <span class="font-medium">GitHub:</span>
-                      <a href={`https://${contactInfo.github}`} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline dark:text-blue-400">
-                        {contactInfo.github}
-                      </a>
-                    </p>
-                    <p><span class="font-medium">Location:</span> {contactInfo.location}</p>
-                  </div>              
-            </div>
+  <h2 class="font-semibold text-2xl tracking-tight mb-4 dark:text-white">
+    Get in Touch
+  </h2>
+  <p class="text-slate-600 text-lg mb-8 dark:text-slate-300">
+    Feel free to reach out if you're looking for a developer, have a question,
+    or just want to connect.
+  </p>
+
+  <div class="bg-slate-100 p-8 rounded-xl dark:bg-slate-800">
+    <div class="grid grid-cols-1 gap-8">
+      <div>
+        <h3 class="font-medium text-xl mb-4 text-slate-800 dark:text-white">
+          Contact Information
+        </h3>
+        <div class="space-y-2 text-slate-600 dark:text-slate-300">
+          <p><span class="font-medium">Email:</span> {contactInfo.email}</p>
+          <p><span class="font-medium">Phone:</span> {contactInfo.phone}</p>
+          <p>
+            <span class="font-medium">LinkedIn:</span>
+            <a
+              href={`https://${contactInfo.linkedin}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              {contactInfo.linkedin}
+            </a>
+          </p>
+          <p>
+            <span class="font-medium">GitHub:</span>
+            <a
+              href={`https://${contactInfo.github}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              {contactInfo.github}
+            </a>
+          </p>
+          <p>
+            <span class="font-medium">Location:</span>
+            {contactInfo.location}
+          </p>
         </div>
+      </div>
     </div>
+  </div>
 </section>
